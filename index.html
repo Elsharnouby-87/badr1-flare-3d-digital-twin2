@@ -1,0 +1,967 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#071526"/><title>BADR-1 | Flare Engineering Digital Twin 2</title><style>500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{font-family:'DM Sans',system-ui,-apple-system,Segoe UI,sans-serif;color:#dae7f4;background:#071422;font-size:13px}*{box-sizing:border-box}body{margin:0;overflow:hidden}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}#app{height:100vh;display:flex;flex-direction:column;min-height:530px}.topbar{height:72px;display:flex;align-items:center;gap:22px;justify-content:space-between;background:#0b1b2c;border-bottom:1px solid #1b3347;padding:0 23px;flex-shrink:0}.brand{display:flex;align-items:center;gap:13px;min-width:264px}.brand-icon{height:41px;width:41px;display:grid;place-items:center;background:#192e41;border:1px solid #344658;border-radius:12px}.super,.eyebrow{font-size:9px;font-weight:800;letter-spacing:1.9px;color:#6e91aa}.super{letter-spacing:1.6px}.vnum{color:#f79f66;margin-left:4px}.brand h1{font-size:20px;line-height:24px;margin:2px 0 0;color:#fff;letter-spacing:-.65px}.brand h1 span{font-weight:500;color:#b3c3d1}.top-context{display:flex;align-items:center;gap:10px;color:#a4b6c6;font-size:11px;white-space:nowrap}.site-dot,.live-dot,.green-dot{width:6px;height:6px;border-radius:50%;background:#50d9ad;display:inline-block;box-shadow:0 0 9px #38d4a880}.separator{display:inline-block;width:1px;height:15px;background:#345066;margin:0 5px;vertical-align:middle}.chip{border-radius:5px;font-size:9px;letter-spacing:1px;font-weight:800;padding:8px 10px}.chip-amber{color:#e5b96e;border:1px solid #775d3a;background:#4938184a}.top-actions{display:flex;gap:9px}.nav-btn{border:1px solid #38516a;background:#12283b;color:#b8cad8;padding:9px 13px;border-radius:7px;font-size:12px}.nav-btn.primary{background:#ed9059;border-color:#ed9059;color:#0d1824;font-weight:800}.nav-btn:hover{filter:brightness(1.12)}.workspace{display:grid;grid-template-columns:284px minmax(390px,1fr) 321px;flex:1;min-height:0}.sidebar,.properties{background:#0b1a2a;min-height:0;display:flex;flex-direction:column}.sidebar{border-right:1px solid #233b50}.properties{border-left:1px solid #233b50}.side-title{padding:25px 19px 10px}.side-head{display:flex;align-items:center;justify-content:space-between}.side-head h2{font-size:16px;margin:7px 0}.side-head span{font-family:'IBM Plex Mono',monospace;color:#8ca9bf;font-size:11px;background:#182c3e;padding:6px 8px;border-radius:5px}.search-wrap{margin:7px 16px 18px;background:#111f31;border:1px solid #2c4054;border-radius:7px;display:flex;align-items:center;padding:0 12px;gap:7px}.search-wrap span{font-size:20px;color:#7290a8}.search-wrap input{background:transparent;border:0;outline:0;padding:11px 0;color:white;width:100%;font-size:12px}.search-wrap input::placeholder{color:#668196}.tabrow{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid #263a4c;padding:0 12px}.tab{color:#7895aa;background:transparent;border:0;padding:11px 7px;font-weight:700;font-size:11px;border-bottom:2px solid transparent}.tab.active{color:#f0b07d;border-bottom-color:#ed9d65}.tab span{background:#7a4f37;border-radius:6px;padding:2px 5px;color:#ffd6b1}.left-content{flex:1;min-height:0;overflow:auto;padding:13px 8px}.left-content::-webkit-scrollbar,.properties-body::-webkit-scrollbar{width:5px}.left-content::-webkit-scrollbar-thumb,.properties-body::-webkit-scrollbar-thumb{background:#2a4054}.section-label{font-size:9px;color:#6989a1;letter-spacing:1.5px;font-weight:800;padding:12px 13px 7px}.asset{display:flex;align-items:center;gap:10px;padding:10px 10px;margin:1px 6px;border:1px solid transparent;border-radius:7px;text-align:left;background:transparent;width:calc(100% - 12px);color:#d3e2ec}.asset:hover{background:#173047}.asset.selected{background:#18364b;border-color:#4a6d7f}.asset-icon{font-size:17px;width:32px;height:33px;flex-shrink:0;border:1px solid #345064;display:grid;place-items:center;border-radius:6px;background:#10273a}.asset-text{flex:1;min-width:0}.asset b{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#e2eef8}.asset small{display:block;color:#8299ac;margin-top:3px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;font-size:10px}.asset-status{font-size:9px;color:#718fa0}.side-footer{padding:16px 20px 19px;border-top:1px solid #294057;background:#101f30;flex-shrink:0}.side-footer-title{font-size:9px;letter-spacing:1.4px;font-weight:800;color:#8ca6b9;margin-bottom:12px}.tick-icon{color:#55d4aa}.metric{display:flex;gap:12px;align-items:center;margin:7px 0;font-size:10px;color:#8fa8b9}.metric b{font-family:'IBM Plex Mono',monospace;font-size:17px;color:#e7eff5;min-width:27px}.foot-note{font-size:9px;line-height:1.55;color:#668196;margin-top:10px}.center{min-height:0;display:flex;flex-direction:column;background:#071728}.viewer-bar{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 19px;border-bottom:1px solid #203a51;flex-shrink:0;background:#0d2033;gap:8px}.viewer-bar strong{font-size:12px}.viewer-bar small{font-size:10px;color:#819bb1}.viewer-controls{display:flex;gap:4px}.viewer-controls button{padding:7px 9px;background:#142b3f;border:1px solid #304a60;color:#c1d4e2;border-radius:5px;font-size:9px;font-weight:800;letter-spacing:.3px}.viewer-controls button:hover{background:#26445d}.viewport{flex:1;min-height:150px;position:relative;background:radial-gradient(circle at 45% 58%,#112b42 0%,#071728 72%);overflow:hidden}canvas#scene{display:block;width:100%;height:100%;cursor:grab;touch-action:none}canvas#scene:active{cursor:grabbing}.labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}.scene-label{position:absolute;transform:translate(-50%,-130%);border:1px solid #4b6880;background:#0d2537e8;color:#dce9f3;padding:4px 6px;border-radius:4px;font-size:9px;white-space:nowrap;font-family:'IBM Plex Mono',monospace;pointer-events:auto;cursor:pointer;box-shadow:0 2px 14px #001a267f}.scene-label.selected{color:#171c20;background:#fac291;border-color:#fac291}.scene-label:hover{border-color:#f4b383}.view-hud{position:absolute;left:18px;bottom:16px;pointer-events:none}.hud-indicator{font:600 9px 'IBM Plex Mono',monospace;letter-spacing:1px;color:#73d8bd;margin-bottom:8px}.hud-hint{font-size:10px;color:#718fa5}.view-axis{position:absolute;right:22px;bottom:18px;display:flex;gap:5px;font:800 11px 'IBM Plex Mono',monospace}.axis-z{color:#6eeab4}.axis-y{color:#72caff}.axis-x{color:#f3aa78}.scale-note{position:absolute;top:17px;left:19px;background:#182b3e;color:#e2b479;border:1px solid #755b3e;border-radius:4px;padding:7px 9px;font:700 9px 'IBM Plex Mono',monospace;letter-spacing:.8px}.toolbar{height:auto;min-height:74px;flex-shrink:0;border-top:1px solid #263d52;padding:10px 18px;display:flex;align-items:center;gap:14px;background:#0b2031;flex-wrap:wrap}.toolbar-title{color:#7899b0;font-size:9px;letter-spacing:1.3px;font-weight:800}.switch-row{display:flex;gap:5px;align-items:center;font-size:10px;color:#aec4d5;cursor:pointer}.switch-row input{accent-color:#f2a26a;width:13px;height:13px;cursor:pointer}.toolbar-divider{width:1px;height:20px;background:#33516a}.layers{display:flex;gap:10px;flex-wrap:wrap}.layer{display:flex;align-items:center;gap:4px;font-size:9px;color:#b0c7d9;cursor:pointer}.layer input{width:12px;height:12px;accent-color:#eda26b}.layer-dot{width:7px;height:7px;border-radius:50%;display:inline-block}.bottom-notice{height:37px;flex-shrink:0;display:flex;align-items:center;gap:6px;background:#142a39;border-top:1px solid #355266;padding:0 17px;font-size:10px;color:#92aab9}.bottom-notice strong{color:#f6c087}.alert-mini{background:#bb7839;color:#091929;width:15px;height:15px;border-radius:50%;display:grid;place-items:center;font-weight:900}.bottom-notice button{border:0;background:transparent;color:#f4b382;margin-left:auto;font-weight:700;cursor:pointer}.props-top{padding:26px 20px 15px;border-bottom:1px solid #2a3c4f}.props-top h2{font-size:17px;margin:10px 0 9px;color:#f0f5fa}.props-top p{line-height:1.6;font-size:11px;color:#829eb4;margin:0}.properties-body{flex:1;overflow:auto;padding:18px 20px;min-height:120px}.properties-body h3{font-size:10px;letter-spacing:1.3px;color:#7fa0b8;margin:6px 0 13px}.info-row{display:grid;grid-template-columns:108px 1fr;border-bottom:1px solid #21374a;padding:9px 0;gap:10px;font-size:11px}.info-row span{color:#7893a6}.info-row b{font-weight:600;color:#e2edf5;word-wrap:break-word}.attr-tag{display:inline-block;margin-top:8px;padding:6px 8px;border-radius:4px;background:#1d3847;color:#f0c18b;font-size:9px;letter-spacing:.5px;border:1px solid #6d5642;font-weight:700}.source-item{border:1px solid #273f52;border-radius:5px;padding:8px;margin:6px 0;color:#aac0d1;font-size:10px;overflow-wrap:anywhere;line-height:1.4}.source-id{display:block;font:800 9px 'IBM Plex Mono',monospace;color:#e4a67a;margin-bottom:4px}.focus-btn{background:#f2a66c;color:#142333;border:0;border-radius:5px;padding:9px 12px;font-weight:800;margin:13px 0;font-size:11px}.notice{background:#3e352b66;border:1px solid #665641;padding:11px;border-radius:6px;font-size:10px;color:#e7c39b;line-height:1.6;margin-top:15px}.diagnostic{padding:17px 18px 19px;background:#12273a;border-top:1px solid #334c62;flex-shrink:0;max-height:220px;overflow:auto}.diagnostic-heading{display:flex;align-items:center;gap:11px;margin-bottom:12px}.diagnostic-heading b{font-size:11px}.diagnostic-heading small{display:block;color:#7793a5;font-size:9px;margin-top:3px}.red-icon{color:#f59977;font-size:24px}.diagnostic select{background:#0c1d30;border:1px solid #496077;color:#d9e8f1;width:100%;padding:10px;border-radius:6px;outline:none;font-size:11px}.diag-content{font-size:10px;line-height:1.65;color:#8da9bd;margin-top:12px}.statusbar{height:26px;flex-shrink:0;padding:0 15px;background:#071320;border-top:1px solid #213446;display:flex;align-items:center;justify-content:space-between;color:#67859b;font:500 9px 'IBM Plex Mono',monospace;gap:10px}.hidden{display:none!important}.modal{position:fixed;inset:0;background:#031019dc;display:grid;place-items:center;z-index:15;padding:20px}.modal-card{position:relative;background:#13293c;border:1px solid #4d6d82;border-radius:14px;width:min(550px,100%);box-shadow:0 20px 90px #0008;padding:34px;line-height:1.7}.modal-card h2{font-size:21px}.modal-card p{color:#a9bbca;font-size:12px}.close{position:absolute;right:18px;top:10px;background:transparent;color:#dceaf4;border:0;font-size:29px}.confirm{background:#f2a66c;color:#0d1b2a;padding:10px 13px;border:0;border-radius:7px;font-weight:800}.issue-card{padding:13px 12px;border:1px solid #344c60;background:#112a3b;margin:7px;border-radius:7px}.issue-card h4{margin:5px 0;font-size:11px}.issue-card p{font-size:10px;line-height:1.6;color:#92b0c3;margin:6px 0}.issue-priority{font:800 8px 'IBM Plex Mono',monospace;color:#ffc38d}.empty{padding:20px;color:#86a2b9;font-size:11px}@media(max-width:1220px){.workspace{grid-template-columns:246px minmax(350px,1fr) 285px}.top-context{display:none}.toolbar{gap:8px}.viewer-controls button{padding:7px 5px}}@media(max-width:850px){body{overflow:auto}#app{height:auto;min-height:100vh}.workspace{grid-template-columns:1fr}.sidebar,.properties{border:0;min-height:180px}.sidebar{order:2;max-height:320px}.center{height:75vh;min-height:570px;order:1}.properties{order:3;min-height:400px}.topbar{height:66px}.viewer-bar{flex-wrap:wrap;height:auto;min-height:65px;padding:10px}.viewer-controls{flex-wrap:wrap}.side-footer{display:none}.statusbar{display:none}}
+.diaglink{color:#e7af80;text-decoration:none;font:700 10px 'IBM Plex Mono',monospace}.diaglink:hover{text-decoration:underline}
+</style></head>
+<body>
+<div id="app">
+<header class="topbar">
+ <div class="brand"><div class="brand-icon"><svg width="27" height="31" viewBox="0 0 27 31" fill="none"><path d="M14 1c2 6-5 8 0 14 0-5 7-8 8-9 3 8 4 16-3 22-8 7-20-2-15-13 2 6 4 7 5 8C5 15 10 9 14 1Z" fill="url(#flame)"/><defs><linearGradient id="flame" x1="3" y1="27" x2="22" y2="2"><stop stop-color="#FFA14D"/><stop offset="1" stop-color="#E34F4E"/></linearGradient></defs></svg></div><div><div class="super">ENGINEERING VISUALIZATION <span class="vnum">V2</span></div><h1>BADR-1 <span>Flare System</span></h1></div></div>
+ <div class="top-context"><span class="site-dot"></span> WEPCO · Egypt <span class="separator"></span> ZEECO SO <b>53475</b> <span class="separator"></span> <span class="chip chip-amber">RECONSTRUCTION · NOT AS-BUILT</span></div>
+ <div class="top-actions"><button id="btnHelp" class="nav-btn" title="About sources and limitations">ⓘ <span>About</span></button><button id="btnSnap" class="nav-btn primary" title="Save current 3D view as PNG">⇩ <span>Snapshot</span></button></div>
+</header>
+<div class="workspace">
+ <aside class="sidebar">
+   <div class="side-title"><div class="eyebrow">ASSET EXPLORER</div><div class="side-head"><h2>System hierarchy</h2><span id="assetCount">—</span></div></div>
+   <div class="search-wrap"><span>⌕</span><input id="search" aria-label="Search equipment or line tags" placeholder="Search tag, line, component..."/></div>
+   <div class="tabrow"><button class="tab active" data-left="assets">Assets</button><button class="tab" data-left="systems">Systems</button><button class="tab" data-left="issues">Issues <span id="issueNumber">7</span></button></div>
+   <div id="leftContent" class="left-content"></div>
+   <div class="side-footer"><div class="side-footer-title"><span class="tick-icon">✓</span> SOURCE COVERAGE</div><div class="metric"><b>17</b><span>PDF reference documents</span></div><div class="metric"><b>10</b><span>Piping isometrics modeled</span></div><div class="foot-note">Coordinates and some component geometries are illustrative. Refer to source register.</div></div>
+ </aside>
+ <main class="center">
+   <div class="viewer-bar"><div><span class="live-dot"></span><strong>3D Engineering Model</strong><small>· local Cartesian | meters</small></div><div class="viewer-controls"><button data-view="all" title="Fit entire system">Fit all</button><button data-view="iso" title="Isometric view">ISO</button><button data-view="top" title="Top view">TOP</button><button data-view="front" title="Front view">FRONT</button><button data-view="rack" title="Focus ignition rack">RACK</button><button data-view="flare" title="Focus flare tip">STACK</button></div></div>
+   <div id="viewport" class="viewport"><canvas id="scene" aria-label="Rotatable 3D engineering model"></canvas><div id="labels" class="labels"></div><div class="view-hud"><div class="hud-indicator"><span class="green-dot"></span> WEBGL2 INTERACTIVE</div><div class="hud-hint">Drag to orbit · Scroll to zoom · Shift+drag to pan · Click equipment</div></div><div class="view-axis"><span class="axis-z">Z ↑</span><span class="axis-y">Y ↗</span><span class="axis-x">X →</span></div><div class="scale-note">PLAN ORIENTATION PROVISIONAL</div></div>
+   <div class="toolbar"><div class="toolbar-title">VIEW OPTIONS</div><label class="switch-row"><input id="toggleLabels" type="checkbox" checked/><span>Labels</span></label><label class="switch-row"><input id="toggleSupports" type="checkbox" checked/><span>Supports</span></label><label class="switch-row"><input id="toggleXray" type="checkbox"/><span>X-Ray</span></label><div class="toolbar-divider"></div><div id="layerToggles" class="layers"></div></div>
+   <div class="bottom-notice"><span class="alert-mini">!</span><strong>Engineering review model</strong> <span>· Not a certified digital twin, construction model or active control system.</span><button id="btnIssues">View open issues →</button></div>
+ </main>
+ <aside class="properties"><div class="props-top"><span class="eyebrow">ENGINEERING PROPERTIES</span><h2 id="detailsTitle">Select a component</h2><p id="detailsSub">Click the 3D model or select an asset from the explorer to inspect technical data and source traceability.</p></div><div id="propertiesBody" class="properties-body"></div><div class="diagnostic"><div class="diagnostic-heading"><span class="red-icon">◉</span><div><b>Diagnostic overlays</b><small>Non-operational troubleshooting reference</small></div></div><select id="scenario" aria-label="Select a troubleshooting scenario"><option value="">Choose a failure scenario...</option><option value="No Ignition Command">No ignition command</option><option value="FFG Ignition Failure">FFG ignition failure</option><option value="HEI Ignition Failure">HEI ignition failure</option><option value="Pilot Gas Failure">Pilot fuel gas failure</option><option value="Flame Detection Failure">Flame detection failure</option><option value="Instrument Air Failure">Instrument air failure</option><option value="Drain Pump Failure">Drain pump failure</option><option value="Main Gas Flow Failure">Main gas flow failure</option></select><div id="diagContent" class="diag-content">Select a scenario to highlight relevant assets and view evidence needed for assessment. No live operational controls.</div></div></aside>
+</div>
+<footer class="statusbar"><div>BADR-1 · Independent engineering visualization · Private source documentation excluded from repository</div><div><span id="renderStatus">Initializing renderer...</span> <span class="separator"></span> <span>27 OCT 2026</span></div></footer>
+</div>
+<div id="aboutDialog" class="modal hidden" role="dialog" aria-modal="true"><div class="modal-card"><button id="closeAbout" class="close">×</button><span class="eyebrow">MODEL INFORMATION</span><h2>Engineering source fidelity</h2><p>This application is a standalone, dependency-free WebGL2 engineering reconstruction of the BADR-1 flare system. It includes the 10 drawing-referenced piping systems, vessel, pump, ignition rack, stack, support representations, diagnostic annotations and an issue register.</p><p><b>Important limitation:</b> Lengths in material bills are not automatically actual centerline route lengths. The site coordinates, some nozzle orientations, rack internals, support layout and proprietary flare tip geometry are provisional. Never use this model for fabrication, field isolation or operation.</p><p><b>Safety:</b> No operating pressures, interlocks, ignition timers or startup instructions in this software constitute approved BADR-1 settings. The ZEECO manuals included in source records refer to general technology and another sales order.</p><button id="closeAbout2" class="confirm">Continue exploring</button></div></div>
+<script>window.__BADR_MODEL__={
+  "sources": [
+    [
+      "PID-02",
+      "FLARE SYSTEM P&ID - REV.02.pdf",
+      "Process diagram and instrumentation",
+      "Rev.02"
+    ],
+    [
+      "ISO-01",
+      "1-ISO-INST AIR LINE(INLET)-(0.5 in)-Rev.01.pdf",
+      "Instrument air inlet",
+      "Rev.01"
+    ],
+    [
+      "ISO-02",
+      "2-ISO-FUEL GAS INLET(0.5 in)-Rev.01.pdf",
+      "Fuel gas inlet",
+      "Rev.01"
+    ],
+    [
+      "ISO-03",
+      "3-ISO-GAS IN LINE-1-(12 in)-Rev.01.pdf",
+      "Main flare gas inlet",
+      "Rev.01"
+    ],
+    [
+      "ISO-04",
+      "4-ISO-GAS OUT LINE-2-(12 in)-Rev.01.pdf",
+      "Main flare gas outlet",
+      "Rev.01"
+    ],
+    [
+      "ISO-05",
+      "5-ISO-SUC. DRAIN LINE-1-(2 in)-Rev.01.pdf",
+      "Drain suction",
+      "Rev.01"
+    ],
+    [
+      "ISO-06",
+      "6-ISO-DIS. DRAIN LINE-2-(1.5 in)-Rev.01.pdf",
+      "Drain discharge",
+      "Rev.01"
+    ],
+    [
+      "ISO-07",
+      "7-ISO-FUEL GAS INLET(TO FLARE STAKE)-(0.5 in)-Rev.01.pdf",
+      "Pilot gas to stack",
+      "Rev.01"
+    ],
+    [
+      "ISO-08",
+      "8-ISO-FFG IGNITION INLET(TO FLARE STAKE)-(1in)-Rev.01.pdf",
+      "Ignition line A",
+      "Rev.01"
+    ],
+    [
+      "ISO-09",
+      "9-ISO-FFG IGNITION INLET(TO FLARE STAKE)-(1in)-Rev.01.pdf",
+      "Ignition line B",
+      "Rev.01"
+    ],
+    [
+      "ISO-10",
+      "10-ISO- AIR LINE(INLET PUMP )-(0.5 in)-Rev.01.pdf",
+      "Air to drain pump",
+      "Rev.01"
+    ],
+    [
+      "RACK-GA",
+      "WD-2946 S1 R1 Rack GA.pdf",
+      "Zeeco ignition rack general arrangement",
+      "S1 R1"
+    ],
+    [
+      "CIV-01",
+      "CI-DWG-001(R2).pdf",
+      "Foundation plan",
+      "R2"
+    ],
+    [
+      "CIV-02",
+      "CI-DWG-002(R2).pdf",
+      "Pedestal details",
+      "R2"
+    ],
+    [
+      "SITE-2008",
+      "B1-PLN-OP-3055 (SOAKAWAY & EVAPORATION POND MAP).pdf",
+      "Historical site plan",
+      "As-built 2008"
+    ],
+    [
+      "ZEECO-HEI",
+      "HEI Technical Manual Rev A.pdf",
+      "Generic HEI 4J and 12J manual; not verified model",
+      "Rev A"
+    ],
+    [
+      "ZEECO-FFG",
+      "pdfcoffee.com_frdffcfmpprm442530-installation-operation-maintenance-manual-written-portion-23052-8122-pdf-free.pdf",
+      "Generic FFG manual SO 23052; not BADR-1",
+      "2014"
+    ]
+  ],
+  "equipment": [
+    {
+      "id": "KO-01",
+      "type": "vessel",
+      "title": "Knock-Out Drum",
+      "x": 13,
+      "y": 0,
+      "z": 1.52,
+      "dimensions": {
+        "outerDiameter_m": 0.914,
+        "overallLength_m": 2.134
+      },
+      "source": [
+        "PID-02",
+        "ISO-03",
+        "ISO-04",
+        "ISO-05"
+      ],
+      "confidence": "DOCUMENTED DIMENSIONS",
+      "note": "Vessel head shape, nozzle position and exact installation coordinates are provisional."
+    },
+    {
+      "id": "F-04",
+      "type": "flare",
+      "title": "Flare Stack",
+      "x": 149,
+      "y": 2.2,
+      "z": 0,
+      "dimensions": {
+        "diameter_nominal_in": 12,
+        "height_m": 12.798
+      },
+      "source": [
+        "PID-02",
+        "ISO-04",
+        "ISO-07",
+        "ISO-08",
+        "ISO-09"
+      ],
+      "confidence": "DOCUMENTED DIMENSIONS",
+      "note": "Flare tip and pilot housings are representative, not proprietary detailed fabrication geometry."
+    },
+    {
+      "id": "HF-03",
+      "type": "rack",
+      "title": "ZEECO HEI/FFG Ignition Rack",
+      "x": -0.5,
+      "y": -20,
+      "z": 0,
+      "dimensions": {
+        "overallLength_m": 2.743,
+        "mass_approx_kg": 270
+      },
+      "source": [
+        "RACK-GA",
+        "PID-02"
+      ],
+      "confidence": "PARTIAL DRAWING RECONSTRUCTION",
+      "note": "Rack frame and components approximated from general arrangement. TP-03/TP-04 conflict flagged."
+    },
+    {
+      "id": "P-02",
+      "type": "pump",
+      "title": "Air-Operated Diaphragm Pump",
+      "x": 17,
+      "y": -5,
+      "z": 0.4,
+      "dimensions": {
+        "ratedFlow_m3h": 2,
+        "head_m": 20
+      },
+      "source": [
+        "PID-02",
+        "ISO-05",
+        "ISO-06",
+        "ISO-10"
+      ],
+      "confidence": "SCHEMATIC MODEL",
+      "note": "Pump external dimensions and make/model not established."
+    },
+    {
+      "id": "LCP-100",
+      "type": "control",
+      "title": "Local Control Panel",
+      "x": -0.5,
+      "y": -20,
+      "z": 1.35,
+      "dimensions": {},
+      "source": [
+        "RACK-GA",
+        "PID-02"
+      ],
+      "confidence": "REPRESENTATIVE",
+      "note": "Approximate enclosure dimensions. Non-operational illustration."
+    },
+    {
+      "id": "API-1",
+      "type": "endpoint",
+      "title": "API Pit / Separator Connection 1",
+      "x": 179,
+      "y": 12,
+      "z": 0,
+      "dimensions": {},
+      "source": [
+        "ISO-06",
+        "PID-02"
+      ],
+      "confidence": "UNRESOLVED",
+      "note": "API Pit vs API Separator naming mismatch; endpoint position conceptual."
+    },
+    {
+      "id": "API-2",
+      "type": "endpoint",
+      "title": "API Pit / Separator Connection 2",
+      "x": 179,
+      "y": 20,
+      "z": 0,
+      "dimensions": {},
+      "source": [
+        "ISO-06",
+        "PID-02"
+      ],
+      "confidence": "UNRESOLVED",
+      "note": "API Pit vs API Separator naming mismatch; endpoint position conceptual."
+    }
+  ],
+  "lines": [
+    {
+      "id": "L-IA-01",
+      "name": "Instrument Air Inlet",
+      "nps": "1/2\"",
+      "bom_m": 72,
+      "material": "SS304 Sch40S",
+      "source": "ISO-01",
+      "system": "instrument-air",
+      "color": "#49a8ff",
+      "pts": [
+        [
+          -75,
+          -22,
+          1.0
+        ],
+        [
+          -68,
+          -22,
+          1.0
+        ],
+        [
+          -68,
+          -21,
+          1.0
+        ],
+        [
+          -5,
+          -21,
+          1.0
+        ],
+        [
+          -2,
+          -20,
+          1.0
+        ]
+      ],
+      "note": "Supply tie-in and field coordinates unresolved; routed illustratively."
+    },
+    {
+      "id": "L-FG-02",
+      "name": "Fuel Gas Inlet",
+      "nps": "1/2\"",
+      "bom_m": 84,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-02",
+      "system": "pilot-gas",
+      "color": "#ffd45c",
+      "pts": [
+        [
+          -83,
+          -16,
+          1.2
+        ],
+        [
+          -77,
+          -16,
+          1.2
+        ],
+        [
+          -77,
+          -18,
+          1.2
+        ],
+        [
+          -4,
+          -18,
+          1.2
+        ],
+        [
+          -2,
+          -19.5,
+          1.2
+        ]
+      ],
+      "note": "Pressure reducing unit 30 to 3 bar marked HOLD on source drawing."
+    },
+    {
+      "id": "L-GI-03",
+      "name": "Main Flare Gas Inlet",
+      "nps": "12\"",
+      "bom_m": 9,
+      "material": "ASTM A106 Gr.B Sch40",
+      "source": "ISO-03",
+      "system": "flare-gas",
+      "color": "#fb944b",
+      "pts": [
+        [
+          4,
+          2,
+          1.65
+        ],
+        [
+          7,
+          2,
+          1.65
+        ],
+        [
+          7,
+          0,
+          1.65
+        ],
+        [
+          11.9,
+          0,
+          1.65
+        ]
+      ],
+      "note": "Gate valve GV-301. End connections and profile schematic."
+    },
+    {
+      "id": "L-GO-04",
+      "name": "Main Flare Gas Outlet",
+      "nps": "12\"",
+      "bom_m": 144,
+      "material": "ASTM A106 Gr.B Sch40",
+      "source": "ISO-04",
+      "system": "flare-gas",
+      "color": "#fb944b",
+      "pts": [
+        [
+          14.1,
+          0,
+          1.7
+        ],
+        [
+          19,
+          0,
+          1.7
+        ],
+        [
+          19,
+          2.2,
+          1.7
+        ],
+        [
+          147.5,
+          2.2,
+          1.7
+        ],
+        [
+          149,
+          2.2,
+          1.7
+        ]
+      ],
+      "note": "Supports near 6 m intervals are representative and not surveyed."
+    },
+    {
+      "id": "L-DS-05",
+      "name": "KO Drain Suction",
+      "nps": "2\"",
+      "bom_m": 5,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-05",
+      "system": "drain",
+      "color": "#61d4cf",
+      "pts": [
+        [
+          13.1,
+          -0.5,
+          0.6
+        ],
+        [
+          13.1,
+          -2,
+          0.45
+        ],
+        [
+          17,
+          -2,
+          0.45
+        ],
+        [
+          17,
+          -5,
+          0.45
+        ]
+      ],
+      "note": "Drain BAV-401 and BAV-402."
+    },
+    {
+      "id": "L-DD-06",
+      "name": "Drain Pump Discharge",
+      "nps": "1 1/2\"",
+      "bom_m": 170,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-06",
+      "system": "drain",
+      "color": "#57ce8a",
+      "pts": [
+        [
+          18,
+          -5,
+          0.8
+        ],
+        [
+          22,
+          -5,
+          0.8
+        ],
+        [
+          22,
+          12,
+          0.9
+        ],
+        [
+          174,
+          12,
+          0.9
+        ],
+        [
+          179,
+          12,
+          0.9
+        ]
+      ],
+      "note": "Two API endpoints; branch split conceptual.",
+      "branches": [
+        [
+          [
+            172,
+            12,
+            0.9
+          ],
+          [
+            172,
+            20,
+            0.9
+          ],
+          [
+            179,
+            20,
+            0.9
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "L-PG-07",
+      "name": "Pilot Fuel Gas to Flare",
+      "nps": "1/2\"",
+      "bom_m": 150,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-07",
+      "system": "pilot-gas",
+      "color": "#ffd45c",
+      "pts": [
+        [
+          1,
+          -19,
+          1.1
+        ],
+        [
+          3,
+          -19,
+          1.1
+        ],
+        [
+          3,
+          -12,
+          1.1
+        ],
+        [
+          146,
+          -12,
+          1.1
+        ],
+        [
+          149,
+          -12,
+          1.1
+        ],
+        [
+          149,
+          1.2,
+          1.1
+        ],
+        [
+          149,
+          1.2,
+          12.2
+        ]
+      ],
+      "note": "TP-05 pilot gas supply. Provisional elevation near flare tip."
+    },
+    {
+      "id": "L-IG-08",
+      "name": "Ignition Line A \u2014 1 inch",
+      "nps": "1\"",
+      "bom_m": 153,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-08",
+      "system": "ignition",
+      "color": "#e18cf2",
+      "pts": [
+        [
+          1.1,
+          -20.3,
+          0.8
+        ],
+        [
+          4,
+          -20.3,
+          0.8
+        ],
+        [
+          4,
+          -15,
+          0.8
+        ],
+        [
+          144,
+          -15,
+          0.8
+        ],
+        [
+          150,
+          -15,
+          0.8
+        ],
+        [
+          150,
+          1.6,
+          0.8
+        ],
+        [
+          150,
+          1.6,
+          12.25
+        ]
+      ],
+      "note": "TP-03/TP-04 references conflict across drawings. NOT confirmed as FFG or HEI."
+    },
+    {
+      "id": "L-IG-09",
+      "name": "Ignition Line B \u2014 1 inch",
+      "nps": "1\"",
+      "bom_m": 153,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-09",
+      "system": "ignition",
+      "color": "#ad71e7",
+      "pts": [
+        [
+          1,
+          -19.5,
+          0.65
+        ],
+        [
+          5,
+          -19.5,
+          0.65
+        ],
+        [
+          5,
+          -17,
+          0.65
+        ],
+        [
+          143,
+          -17,
+          0.65
+        ],
+        [
+          151,
+          -17,
+          0.65
+        ],
+        [
+          151,
+          2.9,
+          0.65
+        ],
+        [
+          151,
+          2.9,
+          12.25
+        ]
+      ],
+      "note": "TP-03/TP-04 discrepancy unresolved, not interchangeable by assumption."
+    },
+    {
+      "id": "L-IA-10",
+      "name": "Air Inlet to Drain Pump",
+      "nps": "1/2\"",
+      "bom_m": 6,
+      "material": "SS304 Sch40S",
+      "source": "ISO-10",
+      "system": "instrument-air",
+      "color": "#49a8ff",
+      "pts": [
+        [
+          12,
+          -5,
+          1
+        ],
+        [
+          14,
+          -5,
+          1
+        ],
+        [
+          15,
+          -5,
+          1
+        ],
+        [
+          17,
+          -5,
+          0.6
+        ]
+      ],
+      "note": "BAV-601, AFR-601, SCV-602."
+    }
+  ],
+  "valves": [
+    {
+      "tag": "GV-301",
+      "type": "Gate Valve",
+      "line": "L-GI-03",
+      "source": "ISO-03"
+    },
+    {
+      "tag": "BAV-401",
+      "type": "Ball Valve",
+      "line": "L-DS-05",
+      "source": "ISO-05"
+    },
+    {
+      "tag": "BAV-402",
+      "type": "Ball Valve",
+      "line": "L-DS-05",
+      "source": "ISO-05"
+    },
+    {
+      "tag": "CKV-403",
+      "type": "Check Valve",
+      "line": "L-DD-06",
+      "source": "ISO-06"
+    },
+    {
+      "tag": "BAV-404",
+      "type": "Ball Valve",
+      "line": "L-DD-06",
+      "source": "ISO-06"
+    },
+    {
+      "tag": "BAV-405",
+      "type": "Ball Valve",
+      "line": "L-DD-06",
+      "source": "ISO-06"
+    },
+    {
+      "tag": "BAV-406",
+      "type": "Ball Valve",
+      "line": "L-DD-06",
+      "source": "ISO-06"
+    },
+    {
+      "tag": "BAV-601",
+      "type": "Ball Valve",
+      "line": "L-IA-10",
+      "source": "ISO-10"
+    },
+    {
+      "tag": "AFR-601",
+      "type": "Filter Regulator",
+      "line": "L-IA-10",
+      "source": "ISO-10"
+    },
+    {
+      "tag": "SCV-602",
+      "type": "Solenoid Control Valve",
+      "line": "L-IA-10",
+      "source": "ISO-10"
+    }
+  ],
+  "issues": [
+    {
+      "id": "ENG-001",
+      "priority": "CRITICAL",
+      "title": "TP-03 and TP-04 ignition designation conflict",
+      "detail": "P&ID and Isometrics 8/9 disagree about HEI/FFG mapping; Rack GA lists both gas ignition outlets. Verify with ZEECO SO 53475 and physical as-built.",
+      "sources": [
+        "PID-02",
+        "ISO-08",
+        "ISO-09",
+        "RACK-GA"
+      ]
+    },
+    {
+      "id": "ENG-002",
+      "priority": "HIGH",
+      "title": "Fuel gas pressure reduction marked HOLD",
+      "detail": "30 bar to 3 bar pressure reducing unit is marked HOLD on ISO-02. Confirm approved assembly and installed condition.",
+      "sources": [
+        "ISO-02"
+      ]
+    },
+    {
+      "id": "ENG-003",
+      "priority": "HIGH",
+      "title": "API Pit vs API Separator nomenclature",
+      "detail": "Isometric ISO-06 indicates API PIT (1)/(2) while P&ID uses API Separator. Confirm exact end locations.",
+      "sources": [
+        "ISO-06",
+        "PID-02"
+      ]
+    },
+    {
+      "id": "ENG-004",
+      "priority": "HIGH",
+      "title": "No complete surveyed coordinates",
+      "detail": "Available isometric and layout drawings do not establish a single surveyed plant coordinate system; route positions are placeholders pending matching as-built coordinates.",
+      "sources": [
+        "ISO-01",
+        "ISO-10",
+        "SITE-2008"
+      ]
+    },
+    {
+      "id": "ENG-005",
+      "priority": "HIGH",
+      "title": "No job-specific ZEECO IOM SO 53475",
+      "detail": "Manufacturer manuals relate to generic HEI and other FFG project SO 23052; use only for generic description.",
+      "sources": [
+        "RACK-GA",
+        "ZEECO-HEI",
+        "ZEECO-FFG"
+      ]
+    },
+    {
+      "id": "ENG-006",
+      "priority": "MEDIUM",
+      "title": "Historical plot plan",
+      "detail": "Site plan As-Built Dec 2008 predates package 2021-2022 and must not be treated as current survey.",
+      "sources": [
+        "SITE-2008"
+      ]
+    },
+    {
+      "id": "ENG-007",
+      "priority": "HIGH",
+      "title": "Geometric centerline lengths not independently reconciled",
+      "detail": "BOM pipe quantities are not literal line centerline lengths. 3D routes are conceptual and need dimension-by-dimension reconstruction.",
+      "sources": [
+        "ISO-01",
+        "ISO-02",
+        "ISO-03",
+        "ISO-04",
+        "ISO-05",
+        "ISO-06",
+        "ISO-07",
+        "ISO-08",
+        "ISO-09",
+        "ISO-10"
+      ]
+    }
+  ],
+  "instruments": [
+    [
+      "LCP-100",
+      "Local control panel"
+    ],
+    [
+      "UA-101",
+      "Pilot 1 flame failure alarm"
+    ],
+    [
+      "UA-102",
+      "Pilot 2 flame failure alarm"
+    ],
+    [
+      "UA-103",
+      "Fuel gas low pressure alarm"
+    ],
+    [
+      "UA-104",
+      "Flare gas low flow alarm"
+    ]
+  ],
+  "meta": {
+    "project": "BADR-1",
+    "version": "Engineering reconstruction v0.1",
+    "date": "2026-10-27",
+    "confidential": true,
+    "repo": "badr1-flare-3d-digital-twin2",
+    "status": "Non-operational conceptual review model"
+  }
+};
+// Dependency-free, working WebGL2 3D review viewer. Coordinates use Z-up meters.
+const V = {add:(a,b)=>a.map((v,i)=>v+b[i]),sub:(a,b)=>a.map((v,i)=>v-b[i]),mul:(a,s)=>a.map(v=>v*s),dot:(a,b)=>a.reduce((v,x,i)=>v+x*b[i],0),cross:(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],len:a=>Math.hypot(...a),unit:a=>{let m=Math.hypot(...a)||1;return a.map(x=>x/m)}};
+function matMul(a,b){let o=new Float32Array(16);for(let col=0;col<4;col++)for(let row=0;row<4;row++)for(let k=0;k<4;k++)o[col*4+row]+=a[k*4+row]*b[col*4+k];return o}
+function perspective(fov,aspect,near,far){let f=1/Math.tan(fov/2);return new Float32Array([f/aspect,0,0,0,0,f,0,0,0,0,(far+near)/(near-far),-1,0,0,2*far*near/(near-far),0])}
+function lookAt(eye,target){let f=V.unit(V.sub(target,eye)),s=V.unit(V.cross(f,[0,0,1])),u=V.cross(s,f);return new Float32Array([s[0],u[0],-f[0],0,s[1],u[1],-f[1],0,s[2],u[2],-f[2],0,-V.dot(s,eye),-V.dot(u,eye),V.dot(f,eye),1])}
+function rgb(hex){return [parseInt(hex.slice(1,3),16)/255,parseInt(hex.slice(3,5),16)/255,parseInt(hex.slice(5,7),16)/255]}
+function createProgram(gl,vs,fs){let sh=(src,type)=>{let h=gl.createShader(type);gl.shaderSource(h,src);gl.compileShader(h);if(!gl.getShaderParameter(h,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(h));return h};let p=gl.createProgram();gl.attachShader(p,sh(vs,gl.VERTEX_SHADER));gl.attachShader(p,sh(fs,gl.FRAGMENT_SHADER));gl.linkProgram(p);if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(p));return p}
+function meshBuilder(){return {a:[],push(p,n){this.a.push(...p,...n)}}}
+function triangle(m,a,b,c){const n=V.unit(V.cross(V.sub(b,a),V.sub(c,a)));m.push(a,n);m.push(b,n);m.push(c,n)}
+function addQuad(m,a,b,c,d){triangle(m,a,b,c);triangle(m,a,c,d)}
+function boxMesh(c,d){let [x,y,z]=c,[w,h,t]=d;let v=[[x-w/2,y-h/2,z-t/2],[x+w/2,y-h/2,z-t/2],[x+w/2,y+h/2,z-t/2],[x-w/2,y+h/2,z-t/2],[x-w/2,y-h/2,z+t/2],[x+w/2,y-h/2,z+t/2],[x+w/2,y+h/2,z+t/2],[x-w/2,y+h/2,z+t/2]];let m=meshBuilder();for(const idx of [[0,1,2,3],[4,7,6,5],[0,4,5,1],[1,5,6,2],[2,6,7,3],[3,7,4,0]])addQuad(m,...idx.map(i=>v[i]));return m.a}
+function cylinderMesh(a,b,r,n=12){let axis=V.unit(V.sub(b,a)),ref=Math.abs(axis[2])<.9?[0,0,1]:[1,0,0],u=V.unit(V.cross(axis,ref)),v=V.cross(axis,u),m=meshBuilder();for(let k=0;k<n;k++){let t=k*Math.PI*2/n,q=(k+1)*Math.PI*2/n;let u1=V.add(V.mul(u,Math.cos(t)*r),V.mul(v,Math.sin(t)*r)),u2=V.add(V.mul(u,Math.cos(q)*r),V.mul(v,Math.sin(q)*r));addQuad(m,V.add(a,u1),V.add(a,u2),V.add(b,u2),V.add(b,u1));triangle(m,a,V.add(a,u2),V.add(a,u1));triangle(m,b,V.add(b,u1),V.add(b,u2))}return m.a}
+function sphereMesh(c,r,seg=10,rings=7){let m=meshBuilder();for(let i=0;i<rings;i++){let a=-Math.PI/2+i*Math.PI/rings,b=-Math.PI/2+(i+1)*Math.PI/rings;for(let j=0;j<seg;j++){let f=j*2*Math.PI/seg,g=(j+1)*2*Math.PI/seg;let at=(el,az)=>[c[0]+r*Math.cos(el)*Math.cos(az),c[1]+r*Math.cos(el)*Math.sin(az),c[2]+r*Math.sin(el)];addQuad(m,at(a,f),at(a,g),at(b,g),at(b,f))}}return m.a}
+function createLineGroupGeometry(points,diameter){let out=[];for(let i=0;i<points.length-1;i++)out.push(cylinderMesh(points[i],points[i+1],diameter/2,12));for(let i=1;i<points.length-1;i++)out.push(sphereMesh(points[i],diameter/2,10,6));return out}
+function centerLine(pts){let sum=[0,0,0];for(let p of pts)sum=V.add(sum,p);return V.mul(sum,1/pts.length)}
+function closestPointLine(px,py,a,b){let dx=b[0]-a[0],dy=b[1]-a[1],t=((px-a[0])*dx+(py-a[1])*dy)/((dx*dx+dy*dy)||1);t=Math.max(0,Math.min(1,t));return Math.hypot(px-(a[0]+t*dx),py-(a[1]+t*dy))}
+class EngineeringViewer{
+ constructor(canvas,overlay,model,onSelect){this.canvas=canvas;this.overlay=overlay;this.model=model;this.onSelect=onSelect;this.gl=canvas.getContext('webgl2',{antialias:true,alpha:false,preserveDrawingBuffer:true});if(!this.gl)throw Error('WebGL2 unavailable');this.items=[];this.selected=null;this.hidden=new Set();this.xray=false;this.showSupports=true;this.showLabels=true;this.showArrows=false;this.az=-.63;this.el=.46;this.dist=208;this.target=[65,0,1.8];this.prep();this.createModel();this.connectEvents();this.resize();window.addEventListener('resize',()=>this.resize());this.render()}
+ prep(){let gl=this.gl;const vs=`#version 300 es\nprecision highp float;in vec3 p;in vec3 n;uniform mat4 mvp;out vec3 N;out vec3 W;void main(){N=n;W=p;gl_Position=mvp*vec4(p,1.0);}`;const fs=`#version 300 es\nprecision highp float;in vec3 N;in vec3 W;uniform vec3 tint;uniform float opacity;uniform float chosen;out vec4 o;void main(){vec3 l=normalize(vec3(-.42,.67,.9));float dif=max(dot(normalize(N),l),0.);vec3 col=tint*(.42+dif*.72)+vec3(chosen*.22,chosen*.18,chosen*.04);o=vec4(col,opacity);}`;let p=this.program=createProgram(gl,vs,fs);gl.useProgram(p);this.aPos=gl.getAttribLocation(p,'p');this.aNorm=gl.getAttribLocation(p,'n');this.uMVP=gl.getUniformLocation(p,'mvp');this.uTint=gl.getUniformLocation(p,'tint');this.uAlpha=gl.getUniformLocation(p,'opacity');this.uChosen=gl.getUniformLocation(p,'chosen');gl.enable(gl.DEPTH_TEST);gl.enable(gl.CULL_FACE);gl.clearColor(.025,.045,.073,1);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA)}
+ addMesh(id,geo,color,system,anchor=null,options={}){let gl=this.gl,buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(geo),gl.STATIC_DRAW);this.items.push({id,buffer,count:geo.length/6,color:rgb(color),system,anchor,options})}
+ addBox(id,c,d,col,system='structure',options={}){this.addMesh(id,boxMesh(c,d),col,system,c,options)}
+ addTube(id,a,b,r,col,system='structure',options={}){this.addMesh(id,cylinderMesh(a,b,r),col,system,V.mul(V.add(a,b),.5),options)}
+ addOrb(id,c,r,col,system='structure',options={}){this.addMesh(id,sphereMesh(c,r),col,system,c,options)}
+ createModel(){let M=this.model;
+  // Drawing-grounded equipment, visually approximate local placement.
+  this.addBox('KO-01',[13,0,.18],[3.2,2.3,.35],'#667a90');
+  this.addTube('KO-01',[11.933,0,1.65],[14.067,0,1.65],.457,'#a5becd');
+  this.addOrb('KO-01',[11.933,0,1.65],.457,'#90aab8');this.addOrb('KO-01',[14.067,0,1.65],.457,'#90aab8');
+  for(let x of [12.2,13.8])this.addBox('KO-01',[x,0,.82],[.22,1,.65],'#566e80');
+  for(let x of [12.15,13.85]){this.addTube('KO-01',[x,0,1.35],[x,0,1.95],.10,'#e1edf4');this.addOrb('KO-01',[x,0,1.96],.13,'#d5e2e8')}
+  // Vertical flare and tip, 12.798 m source height.
+  this.addBox('F-04',[149,2.2,-.12],[3.5,3.5,.25],'#74818c');
+  this.addTube('F-04',[149,2.2,0],[149,2.2,12.798],.1524,'#b3c2ce');
+  for(let z of [0.24,.42,12.5])this.addTube('F-04',[149,2.2,z],[149,2.2,z+.05],.205,'#687e8c');
+  this.addTube('F-04',[149,2.2,12.55],[149,2.2,13.0],.215,'#d7ad78');
+  for(let i=0;i<2;i++){let y=i===0?1.05:3.35,x=149.75;this.addTube('F-04',[x,y,10.75],[x,y,12.9],.032,'#ebc668');this.addTube('F-04',[x,y,12.89],[x,y,13.18],.08,'#d2a983');this.addBox('F-04',[x,y,11.6],[.14,.16,.09],'#8c9da6')}
+  // Rack: 2.743 m overall longitudinal dimension. Others inferred.
+  let rx=-.5,ry=-20;this.addBox('HF-03',[rx,ry,.12],[2.743,1.27,.24],'#667382');this.addBox('HF-03',[rx,ry,2.28],[2.8,1.45,.095],'#c2d0da');
+  for(let x of [-1.75,-.5,.75])for(let y of [-20.58,-19.42])this.addBox('HF-03',[x,y,1.15],[.09,.09,2.25],'#92a5b2');
+  this.addBox('LCP-100',[-1.17,-20.6,1.53],[.76,.19,1.15],'#dae5ed','control');this.addBox('LCP-100',[-1.17,-20.72,1.58],[.58,.08,.68],'#1c344a','control');
+  for(let x of [-1.41,-1.2,-.99])for(let z of [1.43,1.63])this.addOrb('LCP-100',[x,-20.79,z],.028,'#75c7e6','control');
+  for(let z of [.6,.94,1.2])this.addTube('HF-03',[-.7,-20.0,z],[.9,-20,z],.038,z===.6?'#e5b85e':z===.94?'#6bb2dc':'#e59bcb','ignition');
+  for(let x of [-.3,.22,.72]){this.addTube('HF-03',[x,-20.1,.5],[x,-20.1,1.35],.05,'#abb5bc');this.addOrb('HF-03',[x,-20.1,1.34],.13,'#c7d8e2')}
+  this.addBox('HF-03',[.64,-19.95,.44],[.54,.34,.38],'#b5a9a2');
+  for(let x of [-1.6,-1.12,-.53,.03,.59])this.addTube('HF-03',[x,-19.37,.42],[x,-19.25,.42],.065,'#bdcbd5');
+  // Air-operated diaphragm pump: schematic housing.
+  this.addBox('P-02',[17,-5,.12],[1.32,1.05,.25],'#6d7f8f');this.addBox('P-02',[17,-5,.58],[.75,.55,.72],'#b4cad1');for(let yy of [-5.47,-4.53]){this.addOrb('P-02',[17,yy,.56],.44,'#8bb4bc');this.addTube('P-02',[17,yy,.4],[17,yy,.8],.13,'#9ab4c4')}
+  // endpoints deliberately indicative / not surveyed.
+  for(let [i,yy] of [[1,12],[2,20]]){this.addBox('API-'+i,[179,yy,-.15],[3,3,.25],'#596c7c');this.addBox('API-'+i,[179,yy,.28],[2.6,2.6,.56],'#759096');this.addBox('API-'+i,[179,yy,.6],[2.15,2.15,.08],'#394f60')}
+  const diam={'12"':.32385,'2"':.0603,'1 1/2"':.0483,'1"':.0334,'1/2"':.0213};
+  M.lines.forEach(l=>{let pts=l.pts,diameter=diam[l.nps]||.03,sys=l.system;for(const part of createLineGroupGeometry(pts,diameter))this.addMesh(l.id,part,l.color,sys,centerLine(pts));(l.branches||[]).forEach(b=>createLineGroupGeometry(b,diameter).forEach(part=>this.addMesh(l.id,part,l.color,sys,centerLine(b))))});
+  // Valve symbols and flanged joints placed only approximately on indicated lines.
+  const va=[['GV-301',[7,2,1.65],.31,'flare-gas'],['BAV-401',[13.1,-1.3,.6],.105,'drain'],['BAV-402',[14.2,-2,.45],.105,'drain'],['CKV-403',[20,-5,.8],.14,'drain'],['BAV-404',[21.2,-5,.8],.12,'drain'],['BAV-405',[176,20,.9],.11,'drain'],['BAV-406',[176,12,.9],.11,'drain'],['BAV-601',[13,-5,1],.09,'instrument-air'],['AFR-601',[14.4,-5,1],.12,'instrument-air'],['SCV-602',[15.8,-5,.8],.11,'instrument-air']];
+  for(let [id,p,r,s] of va){this.addOrb(id,p,r,id.startsWith('GV')?'#ffe49a':'#e0eaf0',s);this.addTube(id,[p[0],p[1],p[2]],[p[0],p[1],p[2]+r*2],.026,'#cad5dc',s);this.addBox(id,[p[0],p[1],p[2]+r*2],[r*2,r*1.4,r*.5],'#f4c96a',s)}
+  // Main 12" line supports every ~6m, schematic only.
+  for(let x=25;x<147;x+=6){let yy=2.2;this.addBox('PS-'+String(Math.round((x-19)/6)).padStart(3,'0'),[x,yy,-.1],[.75,.75,.18],'#586777','supports');this.addBox('PS-'+String(Math.round((x-19)/6)).padStart(3,'0'),[x,yy,.8],[.1,.13,1.7],'#7c95a3','supports');this.addBox('PS-'+String(Math.round((x-19)/6)).padStart(3,'0'),[x,yy,1.65],[.75,.35,.1],'#adc0c9','supports')}
+  // Ground runway aids orientation; marker is schematic, not site survey.
+  for(let x=-90;x<195;x+=10)this.addTube('__grid',[x,-35,-.25],[x,35,-.25],.011,'#294357','grid');
+  for(let y=-30;y<=30;y+=10)this.addTube('__grid',[-90,y,-.25],[195,y,-.25],.011,'#294357','grid');
+  this.labels=[...M.equipment.filter(x=>x.id!=='LCP-100').map(e=>({id:e.id,name:e.id+' · '+e.title,point:[e.x,e.y,e.type==='flare'?15:e.type==='rack'?3.35:e.type==='vessel'?2.8:2.15]})),...M.lines.map(l=>({id:l.id,name:l.id,point:centerLine(l.pts)}))];
+ }
+ connectEvents(){let c=this.canvas,down=null;c.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY,az:this.az,el:this.el,target:[...this.target],drag:false,button:e.button};c.setPointerCapture(e.pointerId)});c.addEventListener('pointermove',e=>{if(!down)return;let dx=e.clientX-down.x,dy=e.clientY-down.y;if(Math.hypot(dx,dy)>4)down.drag=true;if(e.shiftKey||down.button===2){let k=this.dist*.0017,aa=this.az;this.target=[down.target[0]+(-Math.sin(aa)*dx+Math.cos(aa)*dy)*k,down.target[1]+(Math.cos(aa)*dx+Math.sin(aa)*dy)*k,down.target[2]-dy*k]}else{this.az=down.az-dx*.0055;this.el=Math.max(.04,Math.min(1.5,down.el+dy*.0045))}this.render()});c.addEventListener('pointerup',e=>{if(down&&!down.drag)this.pick(e);down=null});c.addEventListener('contextmenu',e=>e.preventDefault());c.addEventListener('wheel',e=>{e.preventDefault();this.dist=Math.max(3,Math.min(600,this.dist*Math.exp(e.deltaY*.001)));this.render()},{passive:false});}
+ resize(){let dpr=Math.min(window.devicePixelRatio||1,2),rect=this.canvas.getBoundingClientRect();this.canvas.width=Math.round(rect.width*dpr);this.canvas.height=Math.round(rect.height*dpr);this.gl.viewport(0,0,this.canvas.width,this.canvas.height);this.render()}
+ cameraMatrix(){let d=this.dist,eye=[this.target[0]+d*Math.cos(this.el)*Math.cos(this.az),this.target[1]+d*Math.cos(this.el)*Math.sin(this.az),this.target[2]+d*Math.sin(this.el)];return matMul(perspective(Math.PI/4,this.canvas.width/this.canvas.height,.2,2500),lookAt(eye,this.target))}
+ project(pos,mvp=this.cameraMatrix()){let [x,y,z]=pos,xx=mvp[0]*x+mvp[4]*y+mvp[8]*z+mvp[12],yy=mvp[1]*x+mvp[5]*y+mvp[9]*z+mvp[13],ww=mvp[3]*x+mvp[7]*y+mvp[11]*z+mvp[15];return ww>0?[(xx/ww+1)/2*this.canvas.clientWidth,(-yy/ww+1)/2*this.canvas.clientHeight]:null}
+ render(){let gl=this.gl;if(!gl||!this.canvas.width)return;gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(this.program);let matrix=this.cameraMatrix();gl.uniformMatrix4fv(this.uMVP,false,matrix);gl.enableVertexAttribArray(this.aPos);gl.enableVertexAttribArray(this.aNorm);for(let it of this.items){if(this.hidden.has(it.system)||(!this.showSupports&&it.system==='supports'))continue;gl.bindBuffer(gl.ARRAY_BUFFER,it.buffer);gl.vertexAttribPointer(this.aPos,3,gl.FLOAT,false,24,0);gl.vertexAttribPointer(this.aNorm,3,gl.FLOAT,false,24,12);gl.uniform3fv(this.uTint,it.color);gl.uniform1f(this.uAlpha,this.xray&&it.system!=='grid'?.28:it.system==='grid'?.42:1);gl.uniform1f(this.uChosen,this.selected===it.id?1:0);gl.drawArrays(gl.TRIANGLES,0,it.count)}this.paintLabels(matrix)}
+ paintLabels(matrix){this.overlay.innerHTML='';if(!this.showLabels)return;let labels=this.labels.filter(x=>!this.hidden.has(this.model.lines.find(l=>l.id===x.id)?.system));for(let l of labels){let p=this.project(l.point,matrix);if(!p||p[0]<-120||p[0]>this.canvas.clientWidth+90||p[1]<-20||p[1]>this.canvas.clientHeight+20)continue;let el=document.createElement('button');el.className='scene-label'+(this.selected===l.id?' selected':'');el.style.left=p[0]+'px';el.style.top=p[1]+'px';el.textContent=l.name;el.title='Select '+l.name;el.addEventListener('click',()=>this.select(l.id));this.overlay.appendChild(el)}}
+ pick(evt){let rect=this.canvas.getBoundingClientRect(),x=evt.clientX-rect.left,y=evt.clientY-rect.top;let nearest=null,dist=25;for(let e of this.model.equipment){let pos=this.project([e.x,e.y,e.z+(e.type==='flare'?6:0)]);if(pos){let d=Math.hypot(x-pos[0],y-pos[1]);if(d<dist){dist=d;nearest=e.id}}}for(let l of this.model.lines){if(this.hidden.has(l.system))continue;let p=l.pts.map(a=>this.project(a));for(let i=1;i<p.length;i++){if(!p[i-1]||!p[i])continue;let d=closestPointLine(x,y,p[i-1],p[i]);if(d<dist){dist=d;nearest=l.id}}}if(nearest)this.select(nearest)}
+ select(id){this.selected=id;this.onSelect?.(id);this.render()}
+ focus(id){let e=this.model.equipment.find(x=>x.id===id);let l=this.model.lines.find(x=>x.id===id);if(e){this.target=[e.x,e.y,e.type==='flare'?6:e.type==='rack'?1.25:1];this.dist=e.type==='flare'?29:e.type==='rack'?10:12}else if(l){this.target=centerLine(l.pts);let xs=l.pts.map(v=>v[0]),ys=l.pts.map(v=>v[1]),zs=l.pts.map(v=>v[2]);this.dist=Math.max(12,Math.hypot(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys),Math.max(...zs)-Math.min(...zs))*1.45)}this.render()}
+ view(which){if(which==='all'){this.target=[51,0,1.8];this.dist=225;this.az=-.65;this.el=.52}else if(which==='top'){this.az=-Math.PI/2;this.el=1.53}else if(which==='front'){this.az=-Math.PI/2;this.el=.10}else if(which==='iso'){this.az=-.65;this.el=.55}else if(which==='rack'){return this.focus('HF-03')}else if(which==='flare'){return this.focus('F-04')}this.render()}
+ setVisible(system,visible){if(visible)this.hidden.delete(system);else this.hidden.add(system);this.render()}
+ screenshot(){this.render();return this.canvas.toDataURL('image/png')}
+}
+
+
+const el=id=>document.getElementById(id),escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+const SYSTEMS=[['flare-gas','Main Flare Gas','#fb944b'],['pilot-gas','Pilot Fuel Gas','#ffd45c'],['instrument-air','Instrument Air','#49a8ff'],['ignition','Ignition Lines','#db87ed'],['drain','Drainage','#57ce8a']];
+const SCENARIOS={
+ 'No Ignition Command':{tags:['HF-03','LCP-100'],why:'Control panel supply, selected mode, permissives, relay outputs and PLC cause-and-effect may explain why no command is generated.',request:'Request LCP-100 annunciation, PLC events, approved C&E and signed SAT records.'},
+ 'FFG Ignition Failure':{tags:['HF-03','L-IG-08','L-IG-09','L-IA-01','L-FG-02'],why:'Generic ZEECO manual discusses ignition-chamber spark, fuel/air delivery, condensate, pipe blockage and line fill behavior.',request:'Request approved ZEECO SO 53475 IOM, gas/air measurements and commissioning logs. Do not reuse settings from SO 23052.'},
+ 'HEI Ignition Failure':{tags:['HF-03','F-04','L-IG-08','L-IG-09'],why:'Potential failure of an electrically generated high-energy spark, wiring or flame transmission path; installed topology remains unverified.',request:'Confirm exact HEI configuration and ZEECO wiring drawings. Work on energized ignition circuits only by authorized specialists.'},
+ 'Pilot Gas Failure':{tags:['L-FG-02','L-PG-07','HF-03','F-04'],why:'Potential pressure reduction, fuel supply, gas composition or pilot mixer obstruction.',request:'Get certified gas properties, approved pressure design and measurements. ISO-02 HOLD item needs resolution.'},
+ 'Flame Detection Failure':{tags:['F-04','HF-03','LCP-100'],why:'Pilot may be lit while thermocouple/electrical monitoring reports failure, or a pilot may actually be extinguished.',request:'Collect UA-101/UA-102 event records, verified flame status and source-specific sensor/wiring data.'},
+ 'Instrument Air Failure':{tags:['L-IA-01','L-IA-10','HF-03','P-02'],why:'Instrument air is shared by the ignition rack and drain pump air circuit in the source documents.',request:'Confirm clean dry air supply, capacity and alarm history, under approved site work procedures.'},
+ 'Drain Pump Failure':{tags:['KO-01','P-02','L-DS-05','L-DD-06','L-IA-10'],why:'Air regulator, solenoid valve, suction liquid inventory, pump internals and discharge blockage are separate possibilities.',request:'Review level trends, pump maintenance, air supply and discharge endpoint arrangements.'},
+ 'Main Gas Flow Failure':{tags:['L-GI-03','KO-01','L-GO-04','F-04','GV-301'],why:'Gas availability, isolation status, KO drum restrictions and flare line hydraulics require separate confirmation.',request:'Request gas flow history, approved P&ID, site walkdown and backpressure calculations.'}
+};
+(async()=>{let M=window.__BADR_MODEL__;let sources=Object.fromEntries(M.sources.map(s=>[s[0],{id:s[0],file:s[1],purpose:s[2],revision:s[3]}]));let selected='KO-01',leftTab='assets',query='';let viewer;
+ const nameOf=id=>M.equipment.find(x=>x.id===id)?.title||M.lines.find(x=>x.id===id)?.name||M.valves.find(x=>x.tag===id)?.type||id;
+ const left=()=>{const q=query.toLowerCase();let html='';if(leftTab==='assets') {html+='<div class="section-label">PRIMARY EQUIPMENT</div>';for(const x of M.equipment.filter(e=>e.id!=='LCP-100')){if(q&&!`${x.id} ${x.title}`.toLowerCase().includes(q))continue;html+=asset(x.id,x.title,x.type)}html+='<div class="section-label">PIPING ISOMETRICS</div>';for(let x of M.lines){if(q&&!`${x.id} ${x.name} ${x.nps}`.toLowerCase().includes(q))continue;html+=asset(x.id,x.name,x.nps)}html+='<div class="section-label">CONTROL & INSTRUMENTS</div>';if(!q||'LCP-100 local control'.includes(q))html+=asset('LCP-100','Local Control Panel','control');}
+ else if(leftTab==='systems'){html='<div class="section-label">VISUAL SYSTEM GROUPS</div>';for(let [sys,name,col] of SYSTEMS){html+=`<div class="issue-card"><div style="display:flex;align-items:center;gap:9px"><span style="background:${col};width:8px;height:8px;border-radius:50%;display:inline-block"></span><b>${name}</b></div><p>${M.lines.filter(x=>x.system===sys).length} piping circuits · toggle from toolbar below 3D viewer</p></div>`}}
+ else {html='<div class="section-label">ENGINEERING ISSUE REGISTER</div>';for(let x of M.issues){if(q&&!`${x.id} ${x.title}`.toLowerCase().includes(q))continue;html+=`<article class="issue-card"><span class="issue-priority">${x.priority} · ${x.id}</span><h4>${escapeHTML(x.title)}</h4><p>${escapeHTML(x.detail)}</p></article>`}}el('leftContent').innerHTML=html||'<div class="empty">No matching assets.</div>';el('assetCount').textContent=(M.equipment.length+M.lines.length+M.valves.length)+' ITEMS';document.querySelectorAll('[data-asset]').forEach(b=>b.addEventListener('click',()=>{selected=b.dataset.asset;viewer.select(selected)}))};
+ function asset(id,name,kind){let emoji=kind==='flare'?'♨':kind==='vessel'?'▰':kind==='rack'?'▦':kind==='pump'?'◉':kind==='endpoint'?'▤':kind==='control'?'▧':'━';return `<button class="asset ${id===selected?'selected':''}" data-asset="${escapeHTML(id)}"><span class="asset-icon">${emoji}</span><span class="asset-text"><b>${escapeHTML(id)}</b><small>${escapeHTML(name)}</small></span><span class="asset-status">›</span></button>`}
+ const propRow=(a,b)=>`<div class="info-row"><span>${escapeHTML(a)}</span><b>${escapeHTML(b)}</b></div>`;
+ const sourceList=ids=>(ids||[]).map(s=>{let ss=sources[s];return ss?`<div class="source-item"><span class="source-id">${escapeHTML(s)}</span>${escapeHTML(ss.file)}</div>`:''}).join('');
+ const details=()=>{let item=M.equipment.find(x=>x.id===selected)||M.lines.find(x=>x.id===selected)||M.valves.find(x=>x.tag===selected);let kind=M.equipment.some(x=>x.id===selected)?'equipment':M.lines.some(x=>x.id===selected)?'line':'valve';if(!item){el('detailsTitle').textContent='Select a component';el('propertiesBody').innerHTML='';return}el('detailsTitle').textContent=selected;el('detailsSub').textContent=nameOf(selected);let html='<h3>TECHNICAL DETAILS</h3>';
+  if(kind==='equipment'){html+=propRow('Component',item.title)+propRow('Category',item.type)+propRow('Coordinates','Provisional local XYZ')+Object.entries(item.dimensions||{}).map(([k,v])=>propRow(k.replaceAll('_',' '),v)).join('')+propRow('Model confidence',item.confidence);}
+  if(kind==='line'){html+=propRow('Service',item.name)+propRow('Nominal pipe size',item.nps)+propRow('BOM pipe quantity',item.bom_m+' m')+propRow('Material',item.material)+propRow('Sub-system',item.system)+propRow('Route reconstruction','Provisional geometry');}
+  if(kind==='valve'){html+=propRow('Tag',item.tag)+propRow('Type',item.type)+propRow('Line',item.line)+propRow('Position','Schematic');}
+  html+=`<div class="attr-tag">${escapeHTML(kind==='line'?'PROVISIONAL ROUTE':kind==='equipment'?item.confidence:'TAG-VERIFIED · PLACEMENT ESTIMATED')}</div><button class="focus-btn" id="focusSelected">◎ Focus camera</button>`;
+  html+='<h3>SOURCE TRACEABILITY</h3>'+sourceList(kind==='equipment'?item.source:[item.source]);html+=`<div class="notice"><b>Engineering note:</b> ${escapeHTML(item.note||'Symbol, connection and placement must be reconciled against job-specific as-built records.')}</div>`;el('propertiesBody').innerHTML=html;el('focusSelected').onclick=()=>viewer.focus(selected)};
+ function selectAsset(id){selected=id;left();details()};
+ viewer=new EngineeringViewer(el('scene'),el('labels'),M,selectAsset);el('renderStatus').textContent='WebGL2 model ready · '+M.lines.length+' systems';viewer.select('KO-01');viewer.view('all');
+ document.querySelectorAll('[data-left]').forEach(b=>b.onclick=()=>{leftTab=b.dataset.left;document.querySelectorAll('[data-left]').forEach(n=>n.classList.toggle('active',n===b));left()});
+ el('search').oninput=e=>{query=e.target.value;left()};document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>viewer.view(b.dataset.view));el('toggleLabels').onchange=e=>{viewer.showLabels=e.target.checked;viewer.render()};el('toggleSupports').onchange=e=>{viewer.showSupports=e.target.checked;viewer.render()};el('toggleXray').onchange=e=>{viewer.xray=e.target.checked;viewer.render()};el('btnSnap').onclick=()=>{let a=document.createElement('a');a.href=viewer.screenshot();a.download='BADR-1-3D-Engineering-Reconstruction.png';a.click()};
+ el('layerToggles').innerHTML=SYSTEMS.map(([sys,name,color])=>`<label class="layer"><input type="checkbox" checked data-layer="${sys}"/><span class="layer-dot" style="background:${color}"></span>${name}</label>`).join('');document.querySelectorAll('[data-layer]').forEach(x=>x.onchange=e=>viewer.setVisible(e.target.dataset.layer,e.target.checked));
+ el('btnIssues').onclick=()=>{leftTab='issues';document.querySelectorAll('[data-left]').forEach(b=>b.classList.toggle('active',b.dataset.left==='issues'));left()};
+ el('scenario').onchange=e=>{let s=SCENARIOS[e.target.value];el('diagContent').innerHTML=s?`<b>Components:</b> ${s.tags.map(t=>`<a class="diaglink" href="#" data-diag="${t}">${t}</a>`).join(' · ')}<p>${escapeHTML(s.why)}</p><b>Evidence needed:</b> ${escapeHTML(s.request)}`:'Select a scenario to highlight relevant assets and view evidence needed for assessment. No live operational controls.';if(s){viewer.select(s.tags[0]);viewer.focus(s.tags[0])}document.querySelectorAll('[data-diag]').forEach(a=>a.onclick=e=>{e.preventDefault();viewer.select(a.dataset.diag);viewer.focus(a.dataset.diag)})};
+ el('btnHelp').onclick=()=>el('aboutDialog').classList.remove('hidden');el('closeAbout').onclick=el('closeAbout2').onclick=()=>el('aboutDialog').classList.add('hidden');el('aboutDialog').onclick=e=>{if(e.target===el('aboutDialog'))e.target.classList.add('hidden')};document.addEventListener('keydown',e=>{if(e.key==='Escape')el('aboutDialog').classList.add('hidden')});
+ left();details();
+})().catch(err=>{el('renderStatus').textContent='ERROR: '+err.message;el('leftContent').textContent='Application load failed: '+err.message;console.error(err)});
+</script>
+</body></html>
