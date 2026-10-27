@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ENG-001",
+    "priority": "CRITICAL",
+    "title": "TP-03 and TP-04 ignition designation conflict",
+    "detail": "P&ID and Isometrics 8/9 disagree about HEI/FFG mapping; Rack GA lists both gas ignition outlets. Verify with ZEECO SO 53475 and physical as-built.",
+    "sources": [
+      "PID-02",
+      "ISO-08",
+      "ISO-09",
+      "RACK-GA"
+    ]
+  },
+  {
+    "id": "ENG-002",
+    "priority": "HIGH",
+    "title": "Fuel gas pressure reduction marked HOLD",
+    "detail": "30 bar to 3 bar pressure reducing unit is marked HOLD on ISO-02. Confirm approved assembly and installed condition.",
+    "sources": [
+      "ISO-02"
+    ]
+  },
+  {
+    "id": "ENG-003",
+    "priority": "HIGH",
+    "title": "API Pit vs API Separator nomenclature",
+    "detail": "Isometric ISO-06 indicates API PIT (1)/(2) while P&ID uses API Separator. Confirm exact end locations.",
+    "sources": [
+      "ISO-06",
+      "PID-02"
+    ]
+  },
+  {
+    "id": "ENG-004",
+    "priority": "HIGH",
+    "title": "No complete surveyed coordinates",
+    "detail": "Available isometric and layout drawings do not establish a single surveyed plant coordinate system; route positions are placeholders pending matching as-built coordinates.",
+    "sources": [
+      "ISO-01",
+      "ISO-10",
+      "SITE-2008"
+    ]
+  },
+  {
+    "id": "ENG-005",
+    "priority": "HIGH",
+    "title": "No job-specific ZEECO IOM SO 53475",
+    "detail": "Manufacturer manuals relate to generic HEI and other FFG project SO 23052; use only for generic description.",
+    "sources": [
+      "RACK-GA",
+      "ZEECO-HEI",
+      "ZEECO-FFG"
+    ]
+  },
+  {
+    "id": "ENG-006",
+    "priority": "MEDIUM",
+    "title": "Historical plot plan",
+    "detail": "Site plan As-Built Dec 2008 predates package 2021-2022 and must not be treated as current survey.",
+    "sources": [
+      "SITE-2008"
+    ]
+  },
+  {
+    "id": "ENG-007",
+    "priority": "HIGH",
+    "title": "Geometric centerline lengths not independently reconciled",
+    "detail": "BOM pipe quantities are not literal line centerline lengths. 3D routes are conceptual and need dimension-by-dimension reconstruction.",
+    "sources": [
+      "ISO-01",
+      "ISO-02",
+      "ISO-03",
+      "ISO-04",
+      "ISO-05",
+      "ISO-06",
+      "ISO-07",
+      "ISO-08",
+      "ISO-09",
+      "ISO-10"
+    ]
+  }
+]

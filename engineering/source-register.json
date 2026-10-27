@@ -1,0 +1,104 @@
+[
+  [
+    "PID-02",
+    "FLARE SYSTEM P&ID - REV.02.pdf",
+    "Process diagram and instrumentation",
+    "Rev.02"
+  ],
+  [
+    "ISO-01",
+    "1-ISO-INST AIR LINE(INLET)-(0.5 in)-Rev.01.pdf",
+    "Instrument air inlet",
+    "Rev.01"
+  ],
+  [
+    "ISO-02",
+    "2-ISO-FUEL GAS INLET(0.5 in)-Rev.01.pdf",
+    "Fuel gas inlet",
+    "Rev.01"
+  ],
+  [
+    "ISO-03",
+    "3-ISO-GAS IN LINE-1-(12 in)-Rev.01.pdf",
+    "Main flare gas inlet",
+    "Rev.01"
+  ],
+  [
+    "ISO-04",
+    "4-ISO-GAS OUT LINE-2-(12 in)-Rev.01.pdf",
+    "Main flare gas outlet",
+    "Rev.01"
+  ],
+  [
+    "ISO-05",
+    "5-ISO-SUC. DRAIN LINE-1-(2 in)-Rev.01.pdf",
+    "Drain suction",
+    "Rev.01"
+  ],
+  [
+    "ISO-06",
+    "6-ISO-DIS. DRAIN LINE-2-(1.5 in)-Rev.01.pdf",
+    "Drain discharge",
+    "Rev.01"
+  ],
+  [
+    "ISO-07",
+    "7-ISO-FUEL GAS INLET(TO FLARE STAKE)-(0.5 in)-Rev.01.pdf",
+    "Pilot gas to stack",
+    "Rev.01"
+  ],
+  [
+    "ISO-08",
+    "8-ISO-FFG IGNITION INLET(TO FLARE STAKE)-(1in)-Rev.01.pdf",
+    "Ignition line A",
+    "Rev.01"
+  ],
+  [
+    "ISO-09",
+    "9-ISO-FFG IGNITION INLET(TO FLARE STAKE)-(1in)-Rev.01.pdf",
+    "Ignition line B",
+    "Rev.01"
+  ],
+  [
+    "ISO-10",
+    "10-ISO- AIR LINE(INLET PUMP )-(0.5 in)-Rev.01.pdf",
+    "Air to drain pump",
+    "Rev.01"
+  ],
+  [
+    "RACK-GA",
+    "WD-2946 S1 R1 Rack GA.pdf",
+    "Zeeco ignition rack general arrangement",
+    "S1 R1"
+  ],
+  [
+    "CIV-01",
+    "CI-DWG-001(R2).pdf",
+    "Foundation plan",
+    "R2"
+  ],
+  [
+    "CIV-02",
+    "CI-DWG-002(R2).pdf",
+    "Pedestal details",
+    "R2"
+  ],
+  [
+    "SITE-2008",
+    "B1-PLN-OP-3055 (SOAKAWAY & EVAPORATION POND MAP).pdf",
+    "Historical site plan",
+    "As-built 2008"
+  ],
+  [
+    "ZEECO-HEI",
+    "HEI Technical Manual Rev A.pdf",
+    "Generic HEI 4J and 12J manual; not verified model",
+    "Rev A"
+  ],
+  [
+    "ZEECO-FFG",
+    "pdfcoffee.com_frdffcfmpprm442530-installation-operation-maintenance-manual-written-portion-23052-8122-pdf-free.pdf",
+    "Generic FFG manual SO 23052; not BADR-1",
+    "2014"
+  ]
+]

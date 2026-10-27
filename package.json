@@ -1,0 +1,11 @@
+{
+  "name": "badr1-flare-3d-digital-twin2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone BADR-1 Flare 3D review viewer",
+  "scripts": {
+    "dev": "node server.mjs",
+    "check": "node --check src/engine.js && node --check src/app.js && node --check server.mjs && node tests/integrity.mjs"
+  }
+}

@@ -1,0 +1,22 @@
+[
+  [
+    "LCP-100",
+    "Local control panel"
+  ],
+  [
+    "UA-101",
+    "Pilot 1 flame failure alarm"
+  ],
+  [
+    "UA-102",
+    "Pilot 2 flame failure alarm"
+  ],
+  [
+    "UA-103",
+    "Fuel gas low pressure alarm"
+  ],
+  [
+    "UA-104",
+    "Flare gas low flow alarm"
+  ]
+]

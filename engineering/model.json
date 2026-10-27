@@ -1,0 +1,822 @@
+{
+  "sources": [
+    [
+      "PID-02",
+      "FLARE SYSTEM P&ID - REV.02.pdf",
+      "Process diagram and instrumentation",
+      "Rev.02"
+    ],
+    [
+      "ISO-01",
+      "1-ISO-INST AIR LINE(INLET)-(0.5 in)-Rev.01.pdf",
+      "Instrument air inlet",
+      "Rev.01"
+    ],
+    [
+      "ISO-02",
+      "2-ISO-FUEL GAS INLET(0.5 in)-Rev.01.pdf",
+      "Fuel gas inlet",
+      "Rev.01"
+    ],
+    [
+      "ISO-03",
+      "3-ISO-GAS IN LINE-1-(12 in)-Rev.01.pdf",
+      "Main flare gas inlet",
+      "Rev.01"
+    ],
+    [
+      "ISO-04",
+      "4-ISO-GAS OUT LINE-2-(12 in)-Rev.01.pdf",
+      "Main flare gas outlet",
+      "Rev.01"
+    ],
+    [
+      "ISO-05",
+      "5-ISO-SUC. DRAIN LINE-1-(2 in)-Rev.01.pdf",
+      "Drain suction",
+      "Rev.01"
+    ],
+    [
+      "ISO-06",
+      "6-ISO-DIS. DRAIN LINE-2-(1.5 in)-Rev.01.pdf",
+      "Drain discharge",
+      "Rev.01"
+    ],
+    [
+      "ISO-07",
+      "7-ISO-FUEL GAS INLET(TO FLARE STAKE)-(0.5 in)-Rev.01.pdf",
+      "Pilot gas to stack",
+      "Rev.01"
+    ],
+    [
+      "ISO-08",
+      "8-ISO-FFG IGNITION INLET(TO FLARE STAKE)-(1in)-Rev.01.pdf",
+      "Ignition line A",
+      "Rev.01"
+    ],
+    [
+      "ISO-09",
+      "9-ISO-FFG IGNITION INLET(TO FLARE STAKE)-(1in)-Rev.01.pdf",
+      "Ignition line B",
+      "Rev.01"
+    ],
+    [
+      "ISO-10",
+      "10-ISO- AIR LINE(INLET PUMP )-(0.5 in)-Rev.01.pdf",
+      "Air to drain pump",
+      "Rev.01"
+    ],
+    [
+      "RACK-GA",
+      "WD-2946 S1 R1 Rack GA.pdf",
+      "Zeeco ignition rack general arrangement",
+      "S1 R1"
+    ],
+    [
+      "CIV-01",
+      "CI-DWG-001(R2).pdf",
+      "Foundation plan",
+      "R2"
+    ],
+    [
+      "CIV-02",
+      "CI-DWG-002(R2).pdf",
+      "Pedestal details",
+      "R2"
+    ],
+    [
+      "SITE-2008",
+      "B1-PLN-OP-3055 (SOAKAWAY & EVAPORATION POND MAP).pdf",
+      "Historical site plan",
+      "As-built 2008"
+    ],
+    [
+      "ZEECO-HEI",
+      "HEI Technical Manual Rev A.pdf",
+      "Generic HEI 4J and 12J manual; not verified model",
+      "Rev A"
+    ],
+    [
+      "ZEECO-FFG",
+      "pdfcoffee.com_frdffcfmpprm442530-installation-operation-maintenance-manual-written-portion-23052-8122-pdf-free.pdf",
+      "Generic FFG manual SO 23052; not BADR-1",
+      "2014"
+    ]
+  ],
+  "equipment": [
+    {
+      "id": "KO-01",
+      "type": "vessel",
+      "title": "Knock-Out Drum",
+      "x": 13,
+      "y": 0,
+      "z": 1.52,
+      "dimensions": {
+        "outerDiameter_m": 0.914,
+        "overallLength_m": 2.134
+      },
+      "source": [
+        "PID-02",
+        "ISO-03",
+        "ISO-04",
+        "ISO-05"
+      ],
+      "confidence": "DOCUMENTED DIMENSIONS",
+      "note": "Vessel head shape, nozzle position and exact installation coordinates are provisional."
+    },
+    {
+      "id": "F-04",
+      "type": "flare",
+      "title": "Flare Stack",
+      "x": 149,
+      "y": 2.2,
+      "z": 0,
+      "dimensions": {
+        "diameter_nominal_in": 12,
+        "height_m": 12.798
+      },
+      "source": [
+        "PID-02",
+        "ISO-04",
+        "ISO-07",
+        "ISO-08",
+        "ISO-09"
+      ],
+      "confidence": "DOCUMENTED DIMENSIONS",
+      "note": "Flare tip and pilot housings are representative, not proprietary detailed fabrication geometry."
+    },
+    {
+      "id": "HF-03",
+      "type": "rack",
+      "title": "ZEECO HEI/FFG Ignition Rack",
+      "x": -0.5,
+      "y": -20,
+      "z": 0,
+      "dimensions": {
+        "overallLength_m": 2.743,
+        "mass_approx_kg": 270
+      },
+      "source": [
+        "RACK-GA",
+        "PID-02"
+      ],
+      "confidence": "PARTIAL DRAWING RECONSTRUCTION",
+      "note": "Rack frame and components approximated from general arrangement. TP-03/TP-04 conflict flagged."
+    },
+    {
+      "id": "P-02",
+      "type": "pump",
+      "title": "Air-Operated Diaphragm Pump",
+      "x": 17,
+      "y": -5,
+      "z": 0.4,
+      "dimensions": {
+        "ratedFlow_m3h": 2,
+        "head_m": 20
+      },
+      "source": [
+        "PID-02",
+        "ISO-05",
+        "ISO-06",
+        "ISO-10"
+      ],
+      "confidence": "SCHEMATIC MODEL",
+      "note": "Pump external dimensions and make/model not established."
+    },
+    {
+      "id": "LCP-100",
+      "type": "control",
+      "title": "Local Control Panel",
+      "x": -0.5,
+      "y": -20,
+      "z": 1.35,
+      "dimensions": {},
+      "source": [
+        "RACK-GA",
+        "PID-02"
+      ],
+      "confidence": "REPRESENTATIVE",
+      "note": "Approximate enclosure dimensions. Non-operational illustration."
+    },
+    {
+      "id": "API-1",
+      "type": "endpoint",
+      "title": "API Pit / Separator Connection 1",
+      "x": 179,
+      "y": 12,
+      "z": 0,
+      "dimensions": {},
+      "source": [
+        "ISO-06",
+        "PID-02"
+      ],
+      "confidence": "UNRESOLVED",
+      "note": "API Pit vs API Separator naming mismatch; endpoint position conceptual."
+    },
+    {
+      "id": "API-2",
+      "type": "endpoint",
+      "title": "API Pit / Separator Connection 2",
+      "x": 179,
+      "y": 20,
+      "z": 0,
+      "dimensions": {},
+      "source": [
+        "ISO-06",
+        "PID-02"
+      ],
+      "confidence": "UNRESOLVED",
+      "note": "API Pit vs API Separator naming mismatch; endpoint position conceptual."
+    }
+  ],
+  "lines": [
+    {
+      "id": "L-IA-01",
+      "name": "Instrument Air Inlet",
+      "nps": "1/2\"",
+      "bom_m": 72,
+      "material": "SS304 Sch40S",
+      "source": "ISO-01",
+      "system": "instrument-air",
+      "color": "#49a8ff",
+      "pts": [
+        [
+          -75,
+          -22,
+          1
+        ],
+        [
+          -68,
+          -22,
+          1
+        ],
+        [
+          -68,
+          -21,
+          1
+        ],
+        [
+          -5,
+          -21,
+          1
+        ],
+        [
+          -2,
+          -20,
+          1
+        ]
+      ],
+      "note": "Supply tie-in and field coordinates unresolved; routed illustratively."
+    },
+    {
+      "id": "L-FG-02",
+      "name": "Fuel Gas Inlet",
+      "nps": "1/2\"",
+      "bom_m": 84,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-02",
+      "system": "pilot-gas",
+      "color": "#ffd45c",
+      "pts": [
+        [
+          -83,
+          -16,
+          1.2
+        ],
+        [
+          -77,
+          -16,
+          1.2
+        ],
+        [
+          -77,
+          -18,
+          1.2
+        ],
+        [
+          -4,
+          -18,
+          1.2
+        ],
+        [
+          -2,
+          -19.5,
+          1.2
+        ]
+      ],
+      "note": "Pressure reducing unit 30 to 3 bar marked HOLD on source drawing."
+    },
+    {
+      "id": "L-GI-03",
+      "name": "Main Flare Gas Inlet",
+      "nps": "12\"",
+      "bom_m": 9,
+      "material": "ASTM A106 Gr.B Sch40",
+      "source": "ISO-03",
+      "system": "flare-gas",
+      "color": "#fb944b",
+      "pts": [
+        [
+          4,
+          2,
+          1.65
+        ],
+        [
+          7,
+          2,
+          1.65
+        ],
+        [
+          7,
+          0,
+          1.65
+        ],
+        [
+          11.9,
+          0,
+          1.65
+        ]
+      ],
+      "note": "Gate valve GV-301. End connections and profile schematic."
+    },
+    {
+      "id": "L-GO-04",
+      "name": "Main Flare Gas Outlet",
+      "nps": "12\"",
+      "bom_m": 144,
+      "material": "ASTM A106 Gr.B Sch40",
+      "source": "ISO-04",
+      "system": "flare-gas",
+      "color": "#fb944b",
+      "pts": [
+        [
+          14.1,
+          0,
+          1.7
+        ],
+        [
+          19,
+          0,
+          1.7
+        ],
+        [
+          19,
+          2.2,
+          1.7
+        ],
+        [
+          147.5,
+          2.2,
+          1.7
+        ],
+        [
+          149,
+          2.2,
+          1.7
+        ]
+      ],
+      "note": "Supports near 6 m intervals are representative and not surveyed."
+    },
+    {
+      "id": "L-DS-05",
+      "name": "KO Drain Suction",
+      "nps": "2\"",
+      "bom_m": 5,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-05",
+      "system": "drain",
+      "color": "#61d4cf",
+      "pts": [
+        [
+          13.1,
+          -0.5,
+          0.6
+        ],
+        [
+          13.1,
+          -2,
+          0.45
+        ],
+        [
+          17,
+          -2,
+          0.45
+        ],
+        [
+          17,
+          -5,
+          0.45
+        ]
+      ],
+      "note": "Drain BAV-401 and BAV-402."
+    },
+    {
+      "id": "L-DD-06",
+      "name": "Drain Pump Discharge",
+      "nps": "1 1/2\"",
+      "bom_m": 170,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-06",
+      "system": "drain",
+      "color": "#57ce8a",
+      "pts": [
+        [
+          18,
+          -5,
+          0.8
+        ],
+        [
+          22,
+          -5,
+          0.8
+        ],
+        [
+          22,
+          12,
+          0.9
+        ],
+        [
+          174,
+          12,
+          0.9
+        ],
+        [
+          179,
+          12,
+          0.9
+        ]
+      ],
+      "note": "Two API endpoints; branch split conceptual.",
+      "branches": [
+        [
+          [
+            172,
+            12,
+            0.9
+          ],
+          [
+            172,
+            20,
+            0.9
+          ],
+          [
+            179,
+            20,
+            0.9
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "L-PG-07",
+      "name": "Pilot Fuel Gas to Flare",
+      "nps": "1/2\"",
+      "bom_m": 150,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-07",
+      "system": "pilot-gas",
+      "color": "#ffd45c",
+      "pts": [
+        [
+          1,
+          -19,
+          1.1
+        ],
+        [
+          3,
+          -19,
+          1.1
+        ],
+        [
+          3,
+          -12,
+          1.1
+        ],
+        [
+          146,
+          -12,
+          1.1
+        ],
+        [
+          149,
+          -12,
+          1.1
+        ],
+        [
+          149,
+          1.2,
+          1.1
+        ],
+        [
+          149,
+          1.2,
+          12.2
+        ]
+      ],
+      "note": "TP-05 pilot gas supply. Provisional elevation near flare tip."
+    },
+    {
+      "id": "L-IG-08",
+      "name": "Ignition Line A — 1 inch",
+      "nps": "1\"",
+      "bom_m": 153,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-08",
+      "system": "ignition",
+      "color": "#e18cf2",
+      "pts": [
+        [
+          1.1,
+          -20.3,
+          0.8
+        ],
+        [
+          4,
+          -20.3,
+          0.8
+        ],
+        [
+          4,
+          -15,
+          0.8
+        ],
+        [
+          144,
+          -15,
+          0.8
+        ],
+        [
+          150,
+          -15,
+          0.8
+        ],
+        [
+          150,
+          1.6,
+          0.8
+        ],
+        [
+          150,
+          1.6,
+          12.25
+        ]
+      ],
+      "note": "TP-03/TP-04 references conflict across drawings. NOT confirmed as FFG or HEI."
+    },
+    {
+      "id": "L-IG-09",
+      "name": "Ignition Line B — 1 inch",
+      "nps": "1\"",
+      "bom_m": 153,
+      "material": "ASTM A106 Gr.B",
+      "source": "ISO-09",
+      "system": "ignition",
+      "color": "#ad71e7",
+      "pts": [
+        [
+          1,
+          -19.5,
+          0.65
+        ],
+        [
+          5,
+          -19.5,
+          0.65
+        ],
+        [
+          5,
+          -17,
+          0.65
+        ],
+        [
+          143,
+          -17,
+          0.65
+        ],
+        [
+          151,
+          -17,
+          0.65
+        ],
+        [
+          151,
+          2.9,
+          0.65
+        ],
+        [
+          151,
+          2.9,
+          12.25
+        ]
+      ],
+      "note": "TP-03/TP-04 discrepancy unresolved, not interchangeable by assumption."
+    },
+    {
+      "id": "L-IA-10",
+      "name": "Air Inlet to Drain Pump",
+      "nps": "1/2\"",
+      "bom_m": 6,
+      "material": "SS304 Sch40S",
+      "source": "ISO-10",
+      "system": "instrument-air",
+      "color": "#49a8ff",
+      "pts": [
+        [
+          12,
+          -5,
+          1
+        ],
+        [
+          14,
+          -5,
+          1
+        ],
+        [
+          15,
+          -5,
+          1
+        ],
+        [
+          17,
+          -5,
+          0.6
+        ]
+      ],
+      "note": "BAV-601, AFR-601, SCV-602."
+    }
+  ],
+  "valves": [
+    {
+      "tag": "GV-301",
+      "type": "Gate Valve",
+      "line": "L-GI-03",
+      "source": "ISO-03"
+    },
+    {
+      "tag": "BAV-401",
+      "type": "Ball Valve",
+      "line": "L-DS-05",
+      "source": "ISO-05"
+    },
+    {
+      "tag": "BAV-402",
+      "type": "Ball Valve",
+      "line": "L-DS-05",
+      "source": "ISO-05"
+    },
+    {
+      "tag": "CKV-403",
+      "type": "Check Valve",
+      "line": "L-DD-06",
+      "source": "ISO-06"
+    },
+    {
+      "tag": "BAV-404",
+      "type": "Ball Valve",
+      "line": "L-DD-06",
+      "source": "ISO-06"
+    },
+    {
+      "tag": "BAV-405",
+      "type": "Ball Valve",
+      "line": "L-DD-06",
+      "source": "ISO-06"
+    },
+    {
+      "tag": "BAV-406",
+      "type": "Ball Valve",
+      "line": "L-DD-06",
+      "source": "ISO-06"
+    },
+    {
+      "tag": "BAV-601",
+      "type": "Ball Valve",
+      "line": "L-IA-10",
+      "source": "ISO-10"
+    },
+    {
+      "tag": "AFR-601",
+      "type": "Filter Regulator",
+      "line": "L-IA-10",
+      "source": "ISO-10"
+    },
+    {
+      "tag": "SCV-602",
+      "type": "Solenoid Control Valve",
+      "line": "L-IA-10",
+      "source": "ISO-10"
+    }
+  ],
+  "issues": [
+    {
+      "id": "ENG-001",
+      "priority": "CRITICAL",
+      "title": "TP-03 and TP-04 ignition designation conflict",
+      "detail": "P&ID and Isometrics 8/9 disagree about HEI/FFG mapping; Rack GA lists both gas ignition outlets. Verify with ZEECO SO 53475 and physical as-built.",
+      "sources": [
+        "PID-02",
+        "ISO-08",
+        "ISO-09",
+        "RACK-GA"
+      ]
+    },
+    {
+      "id": "ENG-002",
+      "priority": "HIGH",
+      "title": "Fuel gas pressure reduction marked HOLD",
+      "detail": "30 bar to 3 bar pressure reducing unit is marked HOLD on ISO-02. Confirm approved assembly and installed condition.",
+      "sources": [
+        "ISO-02"
+      ]
+    },
+    {
+      "id": "ENG-003",
+      "priority": "HIGH",
+      "title": "API Pit vs API Separator nomenclature",
+      "detail": "Isometric ISO-06 indicates API PIT (1)/(2) while P&ID uses API Separator. Confirm exact end locations.",
+      "sources": [
+        "ISO-06",
+        "PID-02"
+      ]
+    },
+    {
+      "id": "ENG-004",
+      "priority": "HIGH",
+      "title": "No complete surveyed coordinates",
+      "detail": "Available isometric and layout drawings do not establish a single surveyed plant coordinate system; route positions are placeholders pending matching as-built coordinates.",
+      "sources": [
+        "ISO-01",
+        "ISO-10",
+        "SITE-2008"
+      ]
+    },
+    {
+      "id": "ENG-005",
+      "priority": "HIGH",
+      "title": "No job-specific ZEECO IOM SO 53475",
+      "detail": "Manufacturer manuals relate to generic HEI and other FFG project SO 23052; use only for generic description.",
+      "sources": [
+        "RACK-GA",
+        "ZEECO-HEI",
+        "ZEECO-FFG"
+      ]
+    },
+    {
+      "id": "ENG-006",
+      "priority": "MEDIUM",
+      "title": "Historical plot plan",
+      "detail": "Site plan As-Built Dec 2008 predates package 2021-2022 and must not be treated as current survey.",
+      "sources": [
+        "SITE-2008"
+      ]
+    },
+    {
+      "id": "ENG-007",
+      "priority": "HIGH",
+      "title": "Geometric centerline lengths not independently reconciled",
+      "detail": "BOM pipe quantities are not literal line centerline lengths. 3D routes are conceptual and need dimension-by-dimension reconstruction.",
+      "sources": [
+        "ISO-01",
+        "ISO-02",
+        "ISO-03",
+        "ISO-04",
+        "ISO-05",
+        "ISO-06",
+        "ISO-07",
+        "ISO-08",
+        "ISO-09",
+        "ISO-10"
+      ]
+    }
+  ],
+  "instruments": [
+    [
+      "LCP-100",
+      "Local control panel"
+    ],
+    [
+      "UA-101",
+      "Pilot 1 flame failure alarm"
+    ],
+    [
+      "UA-102",
+      "Pilot 2 flame failure alarm"
+    ],
+    [
+      "UA-103",
+      "Fuel gas low pressure alarm"
+    ],
+    [
+      "UA-104",
+      "Flare gas low flow alarm"
+    ]
+  ],
+  "meta": {
+    "project": "BADR-1",
+    "version": "Engineering reconstruction v0.1",
+    "date": "2026-10-27",
+    "confidential": true,
+    "repo": "badr1-flare-3d-digital-twin2",
+    "status": "Non-operational conceptual review model"
+  }
+}

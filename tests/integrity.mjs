@@ -1,0 +1,1 @@
+import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';const m=JSON.parse(readFileSync('engineering/model.json','utf8'));assert.equal(m.sources.length,17);assert.equal(m.lines.length,10);for(const tag of ['KO-01','F-04','HF-03','P-02'])assert(m.equipment.some(e=>e.id===tag));assert(m.issues.length>0);console.log('Engineering source model integrity: PASS');

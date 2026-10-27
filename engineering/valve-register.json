@@ -1,0 +1,62 @@
+[
+  {
+    "tag": "GV-301",
+    "type": "Gate Valve",
+    "line": "L-GI-03",
+    "source": "ISO-03"
+  },
+  {
+    "tag": "BAV-401",
+    "type": "Ball Valve",
+    "line": "L-DS-05",
+    "source": "ISO-05"
+  },
+  {
+    "tag": "BAV-402",
+    "type": "Ball Valve",
+    "line": "L-DS-05",
+    "source": "ISO-05"
+  },
+  {
+    "tag": "CKV-403",
+    "type": "Check Valve",
+    "line": "L-DD-06",
+    "source": "ISO-06"
+  },
+  {
+    "tag": "BAV-404",
+    "type": "Ball Valve",
+    "line": "L-DD-06",
+    "source": "ISO-06"
+  },
+  {
+    "tag": "BAV-405",
+    "type": "Ball Valve",
+    "line": "L-DD-06",
+    "source": "ISO-06"
+  },
+  {
+    "tag": "BAV-406",
+    "type": "Ball Valve",
+    "line": "L-DD-06",
+    "source": "ISO-06"
+  },
+  {
+    "tag": "BAV-601",
+    "type": "Ball Valve",
+    "line": "L-IA-10",
+    "source": "ISO-10"
+  },
+  {
+    "tag": "AFR-601",
+    "type": "Filter Regulator",
+    "line": "L-IA-10",
+    "source": "ISO-10"
+  },
+  {
+    "tag": "SCV-602",
+    "type": "Solenoid Control Valve",
+    "line": "L-IA-10",
+    "source": "ISO-10"
+  }
+]
